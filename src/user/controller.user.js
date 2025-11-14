@@ -19,7 +19,7 @@ export class UserContoller {
       // Userga xabar
       await ctx.api.sendMessage(
         userId,
-        "Iltimos bu botga faqat video kodini yuboring."
+        `Iltimos bu botga faqat video kodini yuboring.Siz yuborgan xabar: ${text}`
       );
 
       // Adminga xabar

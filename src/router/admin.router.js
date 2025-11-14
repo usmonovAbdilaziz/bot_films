@@ -24,7 +24,7 @@ const router = async (ctx) => {
     }
 
     // agar text ham, video ham bo‘lmasa
-    await ctx.reply("⚠️ Faqat matn yoki video yuboring.");
+    // await ctx.reply("⚠️ Faqat matn yoki video yuboring.");
   } catch (error) {
     console.log("Routerdan error", error);
     ctx.reply("❌ Routerda xatolik yuz berdi.");

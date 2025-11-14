@@ -93,10 +93,13 @@ export class AdminController {
   async create(ctx) {
     try {
       const parts = ctx.message.text.split(" ");
+      parts.forEach((item,index)=>console.log(item,index)
+      )      
       const channelId = parts[2];
       const link = parts[3];
       const adminId = ctx.message.from.id;
-
+      console.log("channel uchun: ",channelId,link);
+      
       if (!channelId || !link) {
         return ctx.reply("⚠️ Format: /channel add <channelId> <link>");
       }

@@ -41,7 +41,8 @@ export const AuthGuard = async (ctx, next) => {
       });
 
       // ✅ Faqat userga yuboradi
-      await ctx.reply(
+      await ctx.api.sendMessage(
+        userId,
         "❌ Siz barcha kanallarga a’zo bo‘lishingiz kerak.\nQuyidagi kanallarga qo‘shiling:",
         { reply_markup: keyboard }
       );
