@@ -16,7 +16,10 @@ const router = async (ctx) => {
         await controller.start(ctx);
       } else if (mess === "/channel") {
         await controller.channel(ctx);
-      } else {
+      }else if(mess ==="/users"){
+        controller.users(ctx)
+      }
+       else {
         await controller.message(ctx);
       }
 

@@ -1,6 +1,6 @@
 import ChannelMessage from "../model/model.schema.js";
 import Channel from '../model/model.channel.schema.js'
-
+import UserModel from '../model/model.users.schema.js'
 let kode = 0; // global kod saqlash
 
 export class AdminController {
@@ -259,6 +259,19 @@ export class AdminController {
       }
     } catch (error) {
       ctx.reply("❌ /channel komandasi ishlashida xatolik.");
+      console.log("Channel error:", error);
+    }
+  }
+  async users(ctx){
+    try {
+      const allUser =await UserModel.find()
+      allUser.map((user,index)=>{
+        ctx.reply(`Foydalanuvchilar ruyxati User: ${index+1}\nId: ${user.userId}\nName: ${user.full_name}\nUsername: ${user.username}`)
+        console.log(user)
+      })
+      
+    } catch (error) {
+      ctx.reply("❌ /users komandasi ishlashida xatolik.");
       console.log("Channel error:", error);
     }
   }
